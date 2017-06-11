@@ -12,7 +12,7 @@ public class HomeControllerTest1 {
 	public void testHelloPage() throws Exception {
 		HelloWorldController controller = new HelloWorldController();
 		MockMvc mockMvc = standaloneSetup(controller).build();
-		mockMvc.perform(get("/")).andExpect(view().name("welcome"));
+		mockMvc.perform(get("/hello.ds")).andExpect(view().name("welcome"));
 	}
 	
 	@Test
