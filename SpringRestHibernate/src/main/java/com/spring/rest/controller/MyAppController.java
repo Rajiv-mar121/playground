@@ -1,5 +1,6 @@
 package com.spring.rest.controller;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+//@Component
 //@RequestMapping("/call")   ///hello.ds
 public class MyAppController {
 
@@ -24,6 +26,12 @@ public class MyAppController {
 	@RequestMapping(value="/login" , method = RequestMethod.GET)
 	public void login(@RequestParam("loginName") String loginName)
 	{
-		System.out.println("Raj--->Login home rest page ..");
+		System.out.println("Raj--->Login home rest page .."+loginName);
+	}
+	
+	@RequestMapping(value="/register" , method = RequestMethod.GET)
+	public void register(@RequestParam("register") String regis)
+	{
+		System.out.println("Raj--->Login home rest page .."+regis);
 	}
 }

@@ -20,6 +20,9 @@ public class MyAppInitailizer implements WebApplicationInitializer{
         ServletRegistration.Dynamic servlet = container.addServlet("dispatcher", new DispatcherServlet(ctx));
  
         servlet.setLoadOnStartup(1);
+        servlet.addMapping("/login");
+        servlet.addMapping("/register");
+        servlet.addMapping("/displaylist");
         servlet.addMapping("/call");
      //   servlet.addMapping("/hello.ds");
      //   servlet.addMapping("/");

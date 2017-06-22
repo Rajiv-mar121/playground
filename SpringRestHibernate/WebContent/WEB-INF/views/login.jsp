@@ -4,16 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Hello Jsp</title>
+<title>Login Page S4</title>
 </head>
 <body>
-<h1>HelloWorld</h1>
-<form action="./home/hello.ds">
-<!-- <form method="GET">  hello.ds  ./helloagain-->
-NAME:<input type="text" name="name"/>
-	<input type="submit" value="sayHello"/>
-	<input type="submit" value="register"/>
-
+<form action="./register">
+${greeting}
+<input type="text" name="register"/>
+<input type="submit" value="login"/>
 </form>
 </body>
 </html>

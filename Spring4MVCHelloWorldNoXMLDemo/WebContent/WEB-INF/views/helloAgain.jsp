@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Hello Jsp</title>
+<title>Hello Again</title>
 </head>
 <body>
-<h1>HelloWorld</h1>
-<form action="./home/hello.ds">
+<h1>HelloWorld Again</h1>
+<form action="./helloagain">
 <!-- <form method="GET">  hello.ds  ./helloagain-->
 NAME:<input type="text" name="name"/>
 	<input type="submit" value="sayHello"/>

@@ -19,7 +19,8 @@ public class HelloWorldInitializer implements WebApplicationInitializer {
         ServletRegistration.Dynamic servlet = container.addServlet("dispatcher", new DispatcherServlet(ctx));
  
         servlet.setLoadOnStartup(1);
-        servlet.addMapping("/hello.ds");
+        servlet.addMapping("/home/hello.ds");
+        servlet.addMapping("/home/helloagain");
       //  servlet.addMapping("/");
     } ///hello.ds
  

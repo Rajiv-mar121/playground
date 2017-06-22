@@ -18,20 +18,20 @@ import java.sql.Statement;
 import com.websystique.springmvc.repository.DataSourceConfiguration;
  
 @Controller
-@RequestMapping("/hello.ds")   //hello.ds
+@RequestMapping("/home")   //hello.ds
 public class HelloWorldController {
 	
 	@Autowired
 	DataSourceConfiguration ds;
 	
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/hello.ds",method = RequestMethod.GET)
     public String sayHello(@RequestParam("name") String name, @RequestParam(value="name",
     		defaultValue="No Value") String name1,ModelMap model) throws Exception{
     	
     	System.out.println("Raj---> home page "+name+" --->"+name1);
     	this.dbCheck();
         model.addAttribute("greeting"," " +name+" Hello World from Spring 4 MVC");
-        return "success";
+        return "helloAgain";
     }
  
     public void dbCheck() throws Exception
@@ -53,10 +53,10 @@ public class HelloWorldController {
     }
     
     @RequestMapping(value = "/helloagain", method = RequestMethod.GET)
-    public String sayHelloAgain(ModelMap model) {
+    public String sayHelloAgain(@RequestParam("name") String name,ModelMap model) {
     	System.out.println("Raj---> hello again page");
         model.addAttribute("greeting", "Hello World Again, from Spring 4 MVC");
-        return "welcome";
+        return "helloAgain";
     }
     
     @RequestMapping(value = "/register", method = RequestMethod.GET)
