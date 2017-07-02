@@ -24,9 +24,10 @@ public class Login {
 	public Login() {
 	}
 
-	public Login(Integer emaiId, String name) {
+	public Login(Integer emaiId, String name,String password) {
 		this.emaiId = emaiId;
 		this.name = name;
+		this.password = password;
 	}
 
 	public String getName() {
