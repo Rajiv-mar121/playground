@@ -15,14 +15,25 @@
 
 <context:annotation-config />
 
-<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<bean id="myClass" class="readproperties.MyClass">
+		<property name="school" value="St Michael" />
+		
+	</bean>
+	
+	<bean id="mySourceManager" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames" >
+			<value>label</value>
+		</property>
+	</bean>
+	
+<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/test" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
-	</bean>
+	</bean> -->
 
-<bean id="entityManagerFactory" 
+<!-- <bean id="entityManagerFactory" 
 			class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 			p:packagesToScan="com.spring"
             p:dataSource-ref="dataSource"
@@ -33,28 +44,14 @@
 				<property name="showSql" value="true" />
 			</bean>
 		</property>
-	</bean>
+	</bean> -->
 
 <!-- Transactions -->
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+<!-- 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 	
-	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
-	<tx:annotation-driven />
-	
-	<bean id="propertiesMessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="label"/>
-        <property name="defaultEncoding" value="UTF-8"/>
-        <property name="cacheSeconds" value="0"/>
-        <property name="fallbackToSystemLocale" value="false"/>
-    </bean>
-    
-    <bean id="messageSource" class="com.spring.dbprop.DatabaseDrivenMessageSource">
-        <constructor-arg ref="messageResourceService"/>
-        <property name="parentMessageSource" ref="propertiesMessageSource"/>
-    </bean>
-    
-    <bean id="messageResourceService" class="com.spring.service.MessageResourceService">
-    </bean>
+	<tx:annotation-driven transaction-manager="transactionManager" /> -->
+	<!-- <tx:annotation-driven /> -->
+
 </beans>
