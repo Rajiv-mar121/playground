@@ -1,6 +1,7 @@
 package com.spring.main;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -26,7 +27,8 @@ public class SpringOrmMain {
 		MessageService message = ctx.getBean(MessageService.class);
 		MessageSource r=(MessageSource)ctx.getBean("propertiesMessageSource");
 		//Do some data operation
-		System.out.println("Reading Proprty "+r.getMessage("greeting", null,"D Greet",null));
+		System.out.println("Reading Proprty :"+r.getMessage("greeting", null,"D Greet",null));
+		System.out.println("Reading Proprty :"+r.getMessage("greeting", null,"D Greet",new Locale("en","us")));
 		productService.add(new Product(1, "Bulb"));
 		productService.add(new Product(2, "Dijone mustard"));
 		
