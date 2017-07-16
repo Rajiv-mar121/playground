@@ -32,6 +32,8 @@ public class SpringOrmMain {
 		productService.add(new Product(1, "Bulb"));
 		productService.add(new Product(2, "Dijone mustard"));
 		
+		
+		//inserting into message DB
 		message.add(new MessageResource(1,"Greeting","Hello Rajiv","us"));
 		
 		System.out.println("listAll: " + productService.listAll());
@@ -49,7 +51,7 @@ public class SpringOrmMain {
 		//////////// DB implementation
 		
 		DatabaseDrivenMessageSource DBmessage = ctx.getBean(DatabaseDrivenMessageSource.class);
-		System.out.println("Reading From DB ="+ctx.getMessage("greeting", null,null));
+		System.out.println("Reading From DB ="+ctx.getMessage("Greeting", null,new Locale("en","us")));
 		
 		ctx.close();
 		

@@ -45,15 +45,23 @@ public class DatabaseDrivenMessageSource extends AbstractMessageSource  implemen
         Map<String, Map<String, String>> m = new HashMap<String, Map<String, String>>();
         List<MessageResource> texts = messageResourceService.loadAllMessages();
         for (MessageResource text : texts) {
+        	System.out.println("Msg key "+text.getMessageKey());
+        	System.out.println("Msg Text "+text.getMessageText());
+        }
+        for (MessageResource text : texts) {
             Map<String, String> v = new HashMap<String, String>();
             v.put("en", text.getMessageText());
             m.put(text.getMessageKey(), v);
         }
         return m;
     }
+    
+    //This method is invoked from main on call of ctx.getMessage("Greeting", null,new Locale("en","us"))
     @Override
     protected MessageFormat resolveCode(String code, Locale locale) {
+    	System.out.println("......Inside resolve ......."+code+" ::"+locale);
         String msg = getText(code, locale);
+        System.out.println("......Inside resolve ...msg...."+msg);
         MessageFormat result = createMessageFormat(msg, locale);
         return result;
     }
@@ -61,11 +69,16 @@ public class DatabaseDrivenMessageSource extends AbstractMessageSource  implemen
     private String getText(String code, Locale locale) {
     //	Map <String, String> p=properties.get(code);
         Map<String, String> localized = properties.get(code);
+        System.out.println("Localized Val :"+properties.get(code) +"Locale vale: "+locale);
         String textForCurrentLanguage = null;
         if (localized != null) {
             textForCurrentLanguage = localized.get(locale.getLanguage());
+            System.out.println("textForCurrentLanguage :"+textForCurrentLanguage);
             if (textForCurrentLanguage != null) {
-                textForCurrentLanguage = localized.get(Locale.FRANCE.getLanguage());
+            	System.out.println("Language Key :"+Locale.ENGLISH.getLanguage());
+                textForCurrentLanguage = localized.get(Locale.ENGLISH.getLanguage());
+                System.out.println("in if loop textForCurrentLanguage :"+textForCurrentLanguage);
+                
             }
         }
         if (textForCurrentLanguage == null) {
