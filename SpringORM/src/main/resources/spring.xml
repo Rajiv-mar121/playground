@@ -52,7 +52,7 @@
     
     <bean id="messageSource" class="com.spring.dbprop.DatabaseDrivenMessageSource">
         <constructor-arg ref="messageResourceService"/>
-        <property name="parentMessageSource" ref="propertiesMessageSource"/>
+       <!--  <property name="parentMessageSource" ref="propertiesMessageSource"/> -->
     </bean>
     
     <bean id="messageResourceService" class="com.spring.service.MessageResourceService">

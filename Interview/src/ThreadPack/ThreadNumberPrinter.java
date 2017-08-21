@@ -37,6 +37,7 @@ public class ThreadNumberPrinter {
                 while (true) {
                     Thread.sleep(1000l);
                     synchronized (monitor) {
+                    	System.out.println(number.get()+"##"+number.get() % numOfThreads  +" ::"+threadId);
                         if (number.get() % numOfThreads != threadId) {
                             monitor.wait();
                         } else {

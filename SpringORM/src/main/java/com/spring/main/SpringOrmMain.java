@@ -52,6 +52,7 @@ public class SpringOrmMain {
 		
 		DatabaseDrivenMessageSource DBmessage = ctx.getBean(DatabaseDrivenMessageSource.class);
 		System.out.println("Reading From DB ="+ctx.getMessage("Greeting", null,new Locale("en","us")));
+		System.out.println("Reading From DB Again ="+DBmessage.getMessage("Greeting", null,new Locale("en","us")));
 		
 		ctx.close();
 		

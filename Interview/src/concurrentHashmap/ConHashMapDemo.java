@@ -33,7 +33,8 @@ Initial capacity is 200, it means CHM make sure it has space for adding 200 key-
 Load factor is 0.75, it means when average number of elements per map exceeds 150 (intital capacity * load factor = 200 * 0.75 = 150) at that time map size will be increased and existing items in map are rehashed to put in new larger size map.
 For more details on Load Factor: Load factor in Map
 
-Concurrency level is 10, it means at any given point of time Segment array size will be 10 or greater than 10, so that 10 threads can able to parallely write to a map.
+Concurrency level is 10, it means at any given point of time Segment array size will be 10 or greater than 10, 
+so that 10 threads can able to parallely write to a map.
 ============================================
 
 If concurrenyLevel is 10 then Segment array size will be 16. 
