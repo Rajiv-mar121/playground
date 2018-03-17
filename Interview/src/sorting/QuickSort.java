@@ -57,3 +57,5 @@ public class QuickSort {
 	}
 
 }
+
+//https://www.youtube.com/watch?v=3DV8GO9g7B4&t=1160s
