@@ -15,6 +15,7 @@
         a = a + b;
          
         // store intial string a in string b
+        System.out.println(a.length()-b.length());
         b = a.substring(0,a.length()-b.length());
          
         // store initial string b in string a
