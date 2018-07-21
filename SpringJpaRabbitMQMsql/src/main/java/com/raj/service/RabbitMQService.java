@@ -48,7 +48,7 @@ public class RabbitMQService {
 	//	rabbitMQRepository.save(emp);
 		System.out.println("Rabbit Data Saved = " + emp);
 		System.out.println("Property Values  = " + exchange +" <====>"+routingkey);
-		//rabbitTemplate.convertAndSend(exchange, routingkey, emp);
+		rabbitTemplate.convertAndSend(exchange, routingkey, emp);
 		System.out.println("Send msg = " + emp);
 		log.debug("Service class Logging ... yupiee ");
 	    
