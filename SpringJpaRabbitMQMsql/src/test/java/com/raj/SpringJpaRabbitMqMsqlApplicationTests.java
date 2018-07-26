@@ -11,6 +11,7 @@ public class SpringJpaRabbitMqMsqlApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println("reddy");
 	}
 
 }

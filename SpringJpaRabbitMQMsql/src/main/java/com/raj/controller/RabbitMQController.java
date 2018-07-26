@@ -37,7 +37,17 @@ public class RabbitMQController {
 		return "Inside RabbitMQ";
 	}
 
-	
+	@GetMapping("/list")
+	public List<Employee> list()
+	{
+		System.out.println(" Inside RabbitMQ");
+		Employee e1=new Employee();
+		e1.setEmpId("1002");
+		e1.setEmpName("Rocky");
+		List<Employee> li=new ArrayList<Employee>();
+		li.add(e1);
+		return li;
+	}
 	@GetMapping(value = "/producer")
 	public String producer(@RequestParam("empName") String empName,@RequestParam("empId") String empId) {
 		   final Logger LOGGER = LoggerFactory.getLogger(RabbitMQController.class);
