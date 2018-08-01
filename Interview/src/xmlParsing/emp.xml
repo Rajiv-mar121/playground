@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employee>
+    <address>Sarjapur</address>
+    <age>30</age>
+    <name>Rajiv</name>
+    <office>CV RamanNagar</office>
+    <sal>100000</sal>
+</employee>

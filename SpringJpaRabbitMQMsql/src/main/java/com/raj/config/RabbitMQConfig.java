@@ -12,6 +12,7 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class RabbitMQConfig {
@@ -55,4 +56,9 @@ public class RabbitMQConfig {
 		rabbitTemplate.setMessageConverter(jsonMessageConverter());
 		return rabbitTemplate;
 	}
+	
+	@Bean
+	public RestTemplate getRestTemplate() {
+	      return new RestTemplate();
+	   }
 }
