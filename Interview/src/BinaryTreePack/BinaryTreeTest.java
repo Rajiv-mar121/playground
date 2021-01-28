@@ -24,7 +24,7 @@ public class BinaryTreeTest {
 	{
 		Node root=new Node(5);
 		System.out.println(" Binary Tree Impl");
-		System.out.println("Building tree with root value " + root.val);
+		System.out.println("Building tree with root value: " + root.val);
 		insertNode(root, 1);
 		insertNode(root, 8);
 		insertNode(root, 6);
