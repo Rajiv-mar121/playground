@@ -35,7 +35,9 @@ public class ClientsTest {
 		br.close();
 		
 		System.out.println(response.toString());
+		
 		JSONArray jArray = new JSONArray(response.toString());
+		System.out.println("Length"+jArray.length());
 		 for (int i = 0; i < jArray.length(); i++) {
 			 JSONObject jb = jArray.getJSONObject(i);
 			 String cityId = jb.getString("login");

@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -8,10 +9,23 @@ import com.raj.domain.Employee;
 
 public class RestTemplateDemo {
 
+	@Autowired
+	RestTemplate restTemplate;
+	
 	public static void main(String[] args) {
 		RestTemplateDemo rt=new RestTemplateDemo();
-		rt.testPost();
-		rt.testGet();
+		/*rt.testPost();
+		rt.testGet();*/
+		rt.testRestAutoWired();
+	}
+	
+	public void testRestAutoWired()
+	{
+		String url="http://localhost:8085/rabbitmq/list";
+	//	RestTemplate restTemplate=new RestTemplate();
+		ResponseEntity<Employee[]> reponse=restTemplate.getForEntity(url, Employee[].class);
+		 List<Employee> list=Arrays.asList(reponse.getBody());
+		 System.out.println(list);
 	}
 	
 	public void testPost()

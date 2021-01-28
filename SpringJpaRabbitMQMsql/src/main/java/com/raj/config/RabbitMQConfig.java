@@ -57,8 +57,8 @@ public class RabbitMQConfig {
 		return rabbitTemplate;
 	}
 	
-	@Bean
-	public RestTemplate getRestTemplate() {
+	@Bean(name="restTemplate")
+	public RestTemplate restTemplate() {
 	      return new RestTemplate();
 	   }
 }

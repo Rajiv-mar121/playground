@@ -2,12 +2,19 @@ package com.raj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
+import com.raj.domain.Employee;
 
 @SpringBootApplication
 public class SpringJpaRabbitMqMsqlApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringJpaRabbitMqMsqlApplication.class, args);
+		ConfigurableApplicationContext ctx=SpringApplication.run(SpringJpaRabbitMqMsqlApplication.class, args);
+		RestTemplate restTemplate=(RestTemplate)ctx.getBean("restTemplate");
+		ResponseEntity<Employee[]> reponse=restTemplate.getForEntity("http://localhost:8085/rabbitmq/list", Employee[].class);
 	}
 }
 
