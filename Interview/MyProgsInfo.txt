@@ -1,0 +1,83 @@
+http://www.baeldung.com/java-read-lines-large-filesss
+Domian: http://www.dhyan.com/ems-nms-faq.html
+
+BinaryTree
+http://www.java2s.com/Code/Java/Collections-Data-Structure/BinaryTree.htm
+http://javabeat.net/binary-search-tree-traversal-java/
+http://www.geeksforgeeks.org/top-25-interview-questions/
+
+http://codercareer.blogspot.in/p/binary-tree-interview-questions.html
+
+
+http://www.java2novice.com/java-collections-and-util/treeset/
+
+Philospher Question:
+http://codereview.stackexchange.com/questions/25989/dining-philosophers-problem-solution-with-java-reentrantlock
+
+Design Pattern:
+https://www.tutorialspoint.com/design_pattern/factory_pattern.htm
+
+====================
+ClassLoader:
+http://www.journaldev.com/349/java-classloader
+http://www.javaworld.com/article/2077260/learn-java/learn-java-the-basics-of-java-class-loaders.html
+==================
+InterView Question:
+http://www.java67.com/2012/08/10-java-coding-interview-questions-and.html
+http://www.java2novice.com/java-interview-programs/
+
+================
+Loop In linked List:
+http://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/
+Floyd Cycle Detection algorithm 
+===============
+Types Of ThreadPool:
+===========================
+ 1) Single Thread Executor : A thread pool with only one thread.
+  So all the submitted tasks will be executed sequentially. Method : Executors.newSingleThreadExecutor()
+ 
+ 2) Cached Thread Pool : A thread pool that creates as many threads it needs to execute the task in parrallel. 
+ The old available threads will be reused for the new tasks. If a thread is not used during 60 seconds, 
+ it will be terminated and removed from the pool. Method : Executors.newCachedThreadPool()
+ 
+ 3) Fixed Thread Pool : A thread pool with a fixed number of threads. If a thread is not available for the task,
+  the task is put in queue waiting for an other task to ends. Method : Executors.newFixedThreadPool()
+  
+ 4) Scheduled Thread Pool : A thread pool made to schedule future task. Method : Executors.newScheduledThreadPool()
+  
+ 5) Single Thread Scheduled Pool : A thread pool with only one thread to schedule future task. Method : Executors.newSingleThreadScheduledExecutor()
+ 
+ 
+ 
+ ==========================
+ a) Concurrent hash map working (imp)
+ Divided into 16 parts, Since update operations like put(), remove(), putAll() or clear() is not synchronized,
+
+
+ http://javarevisited.blogspot.in/2013/02/concurrenthashmap-in-java-example-tutorial-working.html
+ 
+ b) cyclic barrier and conuntdown latch
+ countdownlatch:  http://javarevisited.blogspot.in/2012/07/countdownlatch-example-in-java.html
+ CyclicBarrier: http://javarevisited.blogspot.in/2012/07/cyclicbarrier-example-java-5-concurrency-tutorial.html
+	 1) You can not reuse CountDownLatch once count is reaches to zero, this is the main difference 
+	 between CountDownLatch and CyclicBarrier, which is frequently asked in core Java interviews and multi-threading  interviews.
+	
+	 2) Main Thread wait on Latch by calling CountDownLatch.await() method while other thread calls 
+	 CountDownLatch.countDown() to inform that they have completed.
+
+
+Read more: http://javarevisited.blogspot.com/2012/07/countdownlatch-example-in-java.html#ixzz4d5IyVujs
+ d) Searialization and Externalization
+ e) How to read big file in java (40 GB)
+ f) cache implementation which data structure can be used ? 
+ g) Locks, Reentrant Lock
+ 
+ ===========================================
+ 
+ DataStructure:
+ http://www.geeksforgeeks.org/commonly-asked-data-structure-interview-questions-set-1/
+ 
+ ======================
+ Mutable:
+ http://javaconceptoftheday.com/difference-between-shallow-copy-vs-deep-copy-in-java/
+ http://www.journaldev.com/129/how-to-create-immutable-class-in-java
