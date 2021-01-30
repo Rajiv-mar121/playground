@@ -57,6 +57,15 @@ public class FilterMap {
 		System.out.println(getMin);
 		int getMinReverse = li.stream().min(compReverse).get();
 		System.out.println(getMinReverse);
+		
+		
+		// Interview Question
+		List<String> listString= new ArrayList<String>();
+		listString.add("1");listString.add("2");listString.add("3");
+		System.out.println(listString);
+				
+		List<Integer> l1=listString.stream().map(item-> Integer.parseInt(item)).collect(Collectors.toList());
+		System.out.println(l1);
 	}
 
 }
