@@ -53,11 +53,33 @@ public class SingleLinkListLoopDetect {
         return Boolean.FALSE;
     }
 
+    boolean identifyLoopV2(Node head) {
+
+        /**
+         * In this method, we will keep track of two pointers.
+         * One pointer moves one step at a time and second one two steps.
+         * If both pointers are same at any iteration, then the loop exists.
+         */
+        Node slowMv = head;
+        Node fastMv = head;
+        while (slowMv != null && fastMv != null && fastMv.next != null) {
+            slowMv = slowMv.next;
+            fastMv = fastMv.next.next;
+            if (slowMv == fastMv) {
+                return Boolean.TRUE;
+            }
+        }
+        return Boolean.FALSE;
+    }
+
     public static void main(String[] a) {
         SingleLinkListLoopDetect loop = new SingleLinkListLoopDetect();
         Node head = loop.createNode();
         boolean status = loop.identifyLoopV1(head);
         System.out.println(" Loop Detected or not : " + status);
         //   loop.display(head);
+
+        boolean statusPointerApproach = loop.identifyLoopV2(head);
+        System.out.println("PointerApproach Loop Detected or not : " + statusPointerApproach);
     }
 }
